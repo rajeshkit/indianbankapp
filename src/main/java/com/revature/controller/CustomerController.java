@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.model.Bank;
 import com.revature.model.Customer;
 
 @RestController
@@ -24,7 +25,10 @@ public class CustomerController {
 	public String getStatement() {
 		return "your statement is ready";
 	}
-	
+	@GetMapping("/bank")
+	public Bank getBank() {
+		return new Bank(2000,"Indian Bank","channai","chennai");
+	}
 	
 	@GetMapping("/customers")
 	public List<Customer> getCustomer() {
